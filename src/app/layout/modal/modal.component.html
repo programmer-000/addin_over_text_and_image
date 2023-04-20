@@ -1,0 +1,23 @@
+<div *ngIf="documentElement"
+     #myModal class="container-modal"
+     [style.top]="resizePositionY + 'px'"
+     [style.left]="resizePositionX + 'px'">
+  <div class="icon-close">
+    <fa-icon [icon]="faTimes" (click)="close()"></fa-icon>
+  </div>
+
+  <div class="content-modal">
+    <div class="note-type" *ngIf="toggleNoteType == 'init-toggle'">
+      <fa-icon [icon]="faAlignJustify" (click)="toggleNote('text')"></fa-icon>
+      <fa-icon [icon]="faImage" (click)="toggleNote('img')"></fa-icon>
+    </div>
+
+    <div class="note-type__text" *ngIf="toggleNoteType == 'text'">
+      <input type="text" #inputNotes [formControl]="textNotes" placeholder="Your notes"
+             (keydown.enter)="$event.preventDefault(); addTextNotes()">
+    </div>
+    <div class="note-type__img" *ngIf="toggleNoteType == 'img'">
+      <input type="file" accept="image/*" (change)="addImgNotes($event)">
+    </div>
+  </div>
+</div>

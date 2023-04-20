@@ -1,0 +1,5 @@
+<div class="list-documents">
+  <div class="item-document" *ngFor="let doc of documents; let i = index">
+    <a [routerLink]="['/documents', doc.pageId || '']"> {{ doc.pageId}} - {{ doc.title}}</a>
+  </div>
+</div>

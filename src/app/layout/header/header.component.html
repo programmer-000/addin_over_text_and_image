@@ -1,0 +1,17 @@
+<div class="header">
+
+  <div class="header-title">
+    <a [routerLink]="['']">Test Doc</a>
+  </div>
+
+  <div class="header-actions">
+    <div class="header-actions__size">{{ zoom$ | async }}</div>
+    <div class="header-actions__btn">
+      <button (click)="zoomIn()">+</button>
+      <button (click)="zoomOut()">-</button>
+      <button (click)="save()">Save</button>
+      <button (click)="reset()">Reset</button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+.pages-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+app-header {
+  position: fixed;
+  width: 100%;
+  z-index: 3000;
+}
+
+.content {
+  margin-top: 49px;
+  position: relative;
+  flex-grow: 1;
+}

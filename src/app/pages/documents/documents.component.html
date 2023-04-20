@@ -1,0 +1,57 @@
+<app-modal #modal></app-modal>
+
+<div class="documents-wrap">
+  <div appMovableArea #documentItem class="document" *ngFor="let doc of documents; let i = index"
+       (click)="addNotes($event, doc)">
+    <div class="document__title">{{ doc.pageId}} - {{ doc.title}}</div>
+    <img [src]="doc.urlImg" alt="document" [attr.id]="'pageId_' + doc.pageId" [style.zoom]="zoom / 100">
+
+    <!--    Notes Text-->
+    <div class="container-note"
+         *ngFor="let notes of doc.noteText"
+         appMovable
+         [appMovableReset]="true"
+         [appDraggingExcludeElement]="deleteIcon"
+         (newPosition)="setNewPositionNotes($event, notes, doc, typeNote.TYPE_TEXT)"
+         [attr.id]="'noteTextId_' + notes.noteTextId"
+         [style.left]="!this.changeZoom ? notes?.coords?.x + 'px' : setCoordsX(notes?.coords?.x, documentItem) + 'px'"
+         [style.top]="!this.changeZoom ? notes?.coords?.y + 'px' : setCoordsY(notes?.coords?.y, documentItem) + 'px'"
+    >
+      <div class="icon-close" #deleteIcon (mousedown)="deleteNote(doc, notes, typeNote.TYPE_TEXT)">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </div>
+
+      <div class="note">
+        <div class="note__content">
+          <div *ngIf="notes" class="note__text">{{ notes.text }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!--    Notes IMG-->
+    <div
+      class="container-note"
+      *ngFor="let notes of doc.noteImg"
+      appMovable
+      [appMovableReset]="true"
+      [appDraggingExcludeElement]="deleteIcon"
+      (newPosition)="setNewPositionNotes($event, notes, doc, typeNote.TYPE_IMG)"
+      [attr.id]="'noteImgId' + notes.noteImgId"
+      [style.left]="!this.changeZoom ? notes?.coords?.x + 'px' : setCoordsX(notes?.coords?.x, documentItem) + 'px'"
+      [style.top]="!this.changeZoom ? notes?.coords?.y + 'px' : setCoordsY(notes?.coords?.y, documentItem) + 'px'"
+    >
+      <div class="icon-close" #deleteIcon (mousedown)="deleteNote(doc, notes, typeNote.TYPE_IMG)">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </div>
+
+      <div class="note">
+        <div class="note__content">
+          <img class="note__img" [src]="notes.img" alt="notes-img">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

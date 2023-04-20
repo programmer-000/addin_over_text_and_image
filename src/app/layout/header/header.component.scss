@@ -1,0 +1,35 @@
+@import "src/assets/styles/variables";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: $green;
+  padding: 10px 20px;
+  line-height: 1;
+  flex-wrap: wrap;
+
+  .header-title {
+    color: $white_color;
+    font-size: 30px;
+    font-weight: bold;
+
+    a {
+      text-decoration: none;
+      color: $white_color;
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__size {
+      color: $white_color;
+      padding: 0 5px;
+    }
+  }
+}

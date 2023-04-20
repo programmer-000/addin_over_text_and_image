@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/assets/styles/variables";
+//@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+//@import '~@fortawesome/fontawesome-free/scss/solid';
+//@import "~@fortawesome/fontawesome-free/css/all.css";
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+
+}
+
+body {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  color: $black_color;
+  background: $white_color;
+  line-height: 1.6;
+  letter-spacing: normal;
+  font-stretch: normal;
+  min-width: 250px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+
+  div {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+    background: transparent;
+  }
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #103836;
+
+  &:hover {
+    color: #4aa9ab;
+  }
+
+  &:active, &:focus {
+    text-decoration: none;
+    outline: none;
+    color: #103836;
+  }
+}
+
+app-pages, app-root {
+  height: 100%;
+}
+
+app-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: $green;
+  padding: 10px 20px;
+  line-height: 1;
+  flex-wrap: wrap;
+  color: $white_color;
+  flex-shrink: 0;
+}
+
+* {
+  scroll-margin-top: 50px;
+}

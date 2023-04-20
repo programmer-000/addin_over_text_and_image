@@ -1,0 +1,65 @@
+@import "src/assets/styles/variables";
+
+.container-modal {
+  position: absolute;
+  z-index: 2000;
+
+  .icon-close {
+    cursor: pointer;
+    font-size: 10px;
+    background: #000;
+    color: #FFFFFF;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+
+    fa-icon {
+      line-height: 1;
+    }
+  }
+}
+
+.content-modal {
+  padding: 0 0 0 10px;
+}
+
+.note-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  width: 65px;
+  background: $green;
+
+  fa-icon {
+    cursor: pointer;
+    color: $white_color;
+    padding: 3px 7px;
+    font-size: 17px;
+  }
+
+  &__text {
+    line-height: 1;
+    padding: 10px;
+    background: $white_color;
+    border-radius: 5px;
+    border: 1px solid $green;
+
+    input {
+      outline-color: $green;
+    }
+  }
+
+  &__img {
+    line-height: 1;
+    padding: 10px;
+    background: $white_color;
+    border-radius: 5px;
+    border: 1px solid $green;
+  }
+}
